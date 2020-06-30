@@ -1,6 +1,6 @@
 {
   "name": "markdown-it-wikilinks",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "WikiMedia-style links for the markdown-it parser",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,8 @@
     "lint-init": "eslint --init",
     "lint": "eslint index.js",
     "test": "npm run lint && mocha -R spec",
-    "test-ci": "npm run lint && istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rimraf ./coverage"
+    "test-ci": "npm run lint && istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rimraf ./coverage",
+    "update-version": "./node_modules/.bin/standard-version"
   },
   "repository": {
     "type": "git",
@@ -36,7 +37,8 @@
     "markdown-it-testgen": "^0.1.4",
     "mocha": "^3.1.0",
     "request": "^2.75.0",
-    "rimraf": "^2.5.4"
+    "rimraf": "^2.5.4",
+    "standard-version": "^8.0.0"
   },
   "dependencies": {
     "extend": "^3.0.0",
