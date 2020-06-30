@@ -35,3 +35,12 @@ jspm_packages
 
 # Optional REPL history
 .node_repl_history
+
+# vim local undo folder
+.undodir
+
+# auto-generated tags file
+tags
+
+# yarn package manager lockfile
+yarn.lock
