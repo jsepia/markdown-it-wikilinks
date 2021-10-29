@@ -40,6 +40,18 @@ Click [[Wiki Link|here]] to learn about wiki links
 .
 
 .
+Also, [[Wiki.Link|Wiki "Links" can use punctuation!]]
+.
+<p>Also, <a href="./Wiki.Link.html">Wiki "Links" can use punctuation!</a></p>
+.
+
+.
+This is a [[Hyphenated-Wiki-Link]]
+.
+<p>This is a <a href="./Hyphenated-Wiki-Link.html">Hyphenated-Wiki-Link</a></p>
+.
+
+.
 This is [[not a valid wiki link]
 .
 <p>This is [[not a valid wiki link]</p>

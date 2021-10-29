@@ -39,7 +39,7 @@ module.exports = (options) => {
   }
 
   return Plugin(
-    /\[\[([\w\s/]+)(\|([\w\s/]+))?\]\]/,
+    /\[\[([^\|\]\n]+)(\|([^\]\n]+))?\]\]/,
     (match, utils) => {
       let label = ''
       let pageName = ''
@@ -79,7 +79,7 @@ module.exports = (options) => {
         htmlAttrs.push(`${attrName}="${attrValue}"`)
       }
       htmlAttrsString = htmlAttrs.join(' ')
-      
+
       return `<a ${htmlAttrsString}>${label}</a>`
     }
   )
