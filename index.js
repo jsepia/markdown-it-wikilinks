@@ -39,7 +39,7 @@ module.exports = (options) => {
   }
 
   return Plugin(
-    /\[\[([^\|\]\n]+)(\|([^\]\n]+))?\]\]/,
+    /\[\[([^|\]\n]+)(\|([^\]\n]+))?\]\]/,
     (match, utils) => {
       let label = ''
       let pageName = ''
