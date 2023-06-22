@@ -27,6 +27,13 @@ Here is a [[Wiki Link]]
 
 
 .
+[[Wiki Link with multiple spaces]]
+.
+<p><a href="./Wiki_Link_with_multiple_spaces.html">Wiki Link with multiple spaces</a></p>
+.
+
+
+.
 [[Wiki Link]]s are cool
 .
 <p><a href="./Wiki_Link.html">Wiki Link</a>s are cool</p>
