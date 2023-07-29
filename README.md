@@ -91,41 +91,39 @@ const html = require('markdown-it')()
   // <p><a href="./Main_Page.html" class="wikilink" rel="nofollow">Main Page</a></p>
 ```
 
-### `generatePageNameFromLabel`
+### `generatePagePathFromLabel`
 
 Unless otherwise specified, the labels of the links are used as the targets. This means that a non-[piped](https://meta.wikimedia.org/wiki/Help:Piped_link) link such as `[[Slate]]` will point to the `Slate` page on your website.
 
-But say you wanted a little more flexibility - like being able to have `[[Slate]]`, `[[slate]]`, `[[SLATE]]` and `[[Slate!]]` to all point to the same page. Well, you can do this by providing your own custom `generatePageNameFromLabel` function.
+But say you wanted a little more flexibility - like being able to have `[[Slate]]`, `[[slate]]`, `[[SLATE]]` and `[[Slate!]]` to all point to the same page. Well, you can do this by providing your own custom `generatePagePathFromLabel` function.
 
 #### Example
 
 ```js
 const _ = require('lodash')
 
-function myCustomPageNameGenerator(label) {
-  return label.split('/').map(function(pathSegment) {
-    // clean up unwanted characters, normalize case and capitalize the first letter
-    pathSegment = _.deburr(pathSegment)
-    pathSegment = pathSegment.replace(/[^\w\s]/g, '')
+function myCustomPagePathGenerator(label) {
+  // clean up unwanted characters, normalize case and capitalize the first letter
+  label = _.deburr(label)
+  label = label.replace(/[^\w\s]/g, '')
 
-    // normalize case
-    pathSegment = _.capitalize(pathSegment.toLowerCase())
+  // normalize case
+  label = _.capitalize(label.toLowerCase())
 
-    return pathSegment
-  })
+  return label
 }
 
 const html = require('markdown-it')()
-  .use(require('markdown-it-wikilinks')({ generatePageNameFromLabel: myCustomPageNameGenerator }))
+  .use(require('markdown-it-wikilinks')({ generatePagePathFromLabel: myCustomPagePathGenerator }))
   .render('Vive la [[révolution!]] VIVE LA [[RÉVOLUTION!!!]]')
   // <p>Vive la <a href="./Revolution.html">révolution!</a> VIVE LA <a href="./Revolution.html">RÉVOLUTION!!!</a></p>
 ```
 
-Please note that the `generatePageNameFromLabel` function does not get applied for [piped links](https://meta.wikimedia.org/wiki/Help:Piped_link) such as `[[/Misc/Cats/Slate|kitty]]` since those already come with a target. 
+Please note that the `generatePagePathFromLabel` function does not get applied for [piped links](https://meta.wikimedia.org/wiki/Help:Piped_link) such as `[[/Misc/Cats/Slate|kitty]]` since those already come with a target. 
 
-### `postProcessPageName`
+### `postProcessPagePath`
 
-A transform applied to every page name. You can override it just like `generatePageNameFromLabel` (see above).
+A transform applied to every page name. You can override it just like `generatePagePathFromLabel` (see above).
 
 The default transform does the following things:
 
@@ -135,15 +133,17 @@ The default transform does the following things:
 
 ### `postProcessLabel`
 
-A transform applied to every link label. You can override it just like `generatePageNameFromLabel` (see above).
+A transform applied to every link label. You can override it just like `generatePagePathFromLabel` (see above).
 
 All the default transform does is trim surrounding whitespace.
 
 ## TODO
 
 * Unit test options
-* Add examples to `postProcessPageName` and `postProcessLabel`
+* Add examples to `postProcessPagePath` and `postProcessLabel`
 
 ## Credits
 
 Based on [markdown-it-ins](https://github.com/markdown-it/markdown-it-ins) by Vitaly Puzrin, Alex Kocharin.
+
+Uses a fork of [reurl](https://github.com/alwinb/reurl) by Alwin Blok.
