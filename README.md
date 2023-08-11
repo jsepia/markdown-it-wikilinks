@@ -121,7 +121,7 @@ const html = require('markdown-it')()
 
 Please note that the `generatePagePathFromLabel` function does not get applied for [piped links](https://meta.wikimedia.org/wiki/Help:Piped_link) such as `[[/Misc/Cats/Slate|kitty]]` since those already come with a target. 
 
-### `postProcessPagePath`
+### `postProcessPageName`
 
 A transform applied to every page name. You can override it just like `generatePagePathFromLabel` (see above).
 
