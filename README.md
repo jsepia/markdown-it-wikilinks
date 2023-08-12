@@ -17,14 +17,30 @@ npm --save install markdown-it-wikilinks
 ```js
 const wikilinks = require('markdown-it-wikilinks')(options)
 const md = require('markdown-it')()
-    .use(wikilinks)
-    .render('Click [[Wiki Links|here]] to learn about [[/Wiki]] links.')
+          .use(wikilinks)
+const html = md.render('Click [[Wiki Links|here]] to learn about [[/Wiki]] links.')
 ```
 
 **Output:**
 
 ```html
 <p>Click <a href="./Wiki_Links.html">here</a> to learn about <a href="/Wiki.html">Wiki</a> links.</p>
+```
+
+It works with spaces and anchors too:
+
+**Input:**
+
+```js
+const md = require('markdown-it')()
+           .use(wikilinks)
+const html = md.render('[[Feline hypercuteness#Signs and symptoms]]')
+```
+
+**Output:**
+
+```html
+<p><a href="./Feline_hypercuteness.html#Signs_and_symptoms">Feline hypercuteness</a> with anchor</p>
 ```
 
 ## Options
@@ -137,10 +153,15 @@ A transform applied to every link label. You can override it just like `generate
 
 All the default transform does is trim surrounding whitespace.
 
+### `stripHashFromLabel`
+
+Removes the `#hash` part of labels in direct wikilinks (`[[page]]`). Does not run on piped links (`[[page|label]]`).
+
 ## TODO
 
 * Unit test options
-* Add examples to `postProcessPagePath` and `postProcessLabel`
+* Add examples to `postProcessPageName` and `postProcessLabel`
+* Ability to customize trailing letters behavior (e.g. `[[cat]]s` => `<a href='./cat.html'>cats</a>`)
 
 ## Credits
 

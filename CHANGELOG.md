@@ -1,6 +1,16 @@
 # Changelog
 
-## [1.3.0] - 2023-22-06
+## [1.4.0] - 2023-08-01
+
+### Added
+
+* Support for anchors in wikilinks
+
+### Changed
+
+* Renamed `generatePageNameFromLabel` and `postProcessPageName` to `generatePagePathFromLabel` and `postProcessPagePath` respectively. The module retains backwards compatibility with the previous property names.
+
+## [1.3.0] - 2023-06-22
 
 ### Added
 

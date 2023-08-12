@@ -34,9 +34,23 @@ Here is a [[Wiki Link]]
 
 
 .
-[[Wiki Link]]s are cool
+[[Wiki Link]]s with trailing letters
 .
-<p><a href="./Wiki_Link.html">Wiki Link</a>s are cool</p>
+<p><a href="./Wiki_Link.html">Wiki Link</a>s with trailing letters</p>
+.
+
+
+.
+[[Feline hypercuteness#Signs and symptoms]] with anchor
+.
+<p><a href="./Feline_hypercuteness.html#Signs_and_symptoms">Feline hypercuteness</a> with anchor</p>
+.
+
+
+.
+[[/Main/Feline hypercuteness#Signs and symptoms]] with path and anchor
+.
+<p><a href="/Main/Feline_hypercuteness.html#Signs_and_symptoms">/Main/Feline hypercuteness</a> with path and anchor</p>
 .
 
 
@@ -52,10 +66,23 @@ Also, [[Wiki.Link|Wiki "Links" can use punctuation!]]
 <p>Also, <a href="./Wiki.Link.html">Wiki "Links" can use punctuation!</a></p>
 .
 
+
+.
+[[Wiki Link#anchor-name|This link]] has both an anchor and an alias
+.
+<p><a href="./Wiki_Link.html#anchor-name">This link</a> has both an anchor and an alias</p>
+.
+
 .
 This is a [[Hyphenated-Wiki-Link]]
 .
 <p>This is a <a href="./Hyphenated-Wiki-Link.html">Hyphenated-Wiki-Link</a></p>
+.
+
+.
+This is an [[#Anchor_only_link]]
+.
+<p>This is an <a href="#Anchor_only_link">Anchor_only_link</a></p>
 .
 
 .
@@ -68,4 +95,10 @@ This is [[not a valid wiki link]
 This is [not a valid wiki link]] either
 .
 <p>This is [not a valid wiki link]] either</p>
+.
+
+.
+This is also not a valid wiki link: [[]]
+.
+<p>This is also not a valid wiki link: [[]]</p>
 .

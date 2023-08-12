@@ -1,6 +1,6 @@
 {
   "name": "markdown-it-wikilinks",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "WikiMedia-style links for the markdown-it parser",
   "main": "index.js",
   "scripts": {
@@ -35,11 +35,13 @@
     "markdown-it": "^12.2.0",
     "markdown-it-testgen": "^0.1.6",
     "mocha": "^9.1.3",
-    "rimraf": "^3.0.2"
+    "rimraf": "^3.0.2",
+    "sinon": "^15.2.0"
   },
   "dependencies": {
     "extend": "^3.0.2",
     "markdown-it-regexp": "^0.4.0",
+    "reurl": "git+https://github.com/jsepia/reurl.git#commonjs",
     "sanitize-filename": "^1.6.3"
   }
 }
